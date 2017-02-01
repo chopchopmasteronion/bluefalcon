@@ -13,8 +13,6 @@ describe('Remind', () => {
       time: date,
       repeat:15
     });
-    console.log(remind);
-    console.log(remind.date);
     expect(remind.title).toEqual('hello');
     expect(remind.complete).toEqual(true);
     expect(remind.time).toEqual(date);

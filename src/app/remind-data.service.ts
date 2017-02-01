@@ -55,7 +55,7 @@ export class RemindDataService {
   // Toggle remind complete
   toggleRemindComplete(remind: Remind){
     let updatedRemind = this.updateRemindById(remind.id, {
-      complete: !Remind.complete
+      complete: !remind.complete
     });
     return updatedRemind;
   }
