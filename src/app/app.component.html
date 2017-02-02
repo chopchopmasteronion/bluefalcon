@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<section class="bluefalconapp">
+  <header class="header">
+    <h1>Reminders</h1>
+    <input class="new-remind" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newRemind.title" (keyup.enter)="addRemind()">
+  </header>
+  <section class="main" *ngIf="reminds.length > 0">
+    <ul class="remind-list">
+      <li *ngFor="let remind of reminds" [class.completed]="remind.complete">
+        <div class="view">
+          <input class="toggle" type="checkbox" (click)="toggleRemindComplete(remind)" [checked]="remind.complete">
+          <label>{{remind.title}}</label>
+          <button class="destroy" (click)="removeRemind(remind)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer" *ngIf="reminds.length > 0">
+    <span class="remind-count"><strong>{{reminds.length}}</strong> {{reminds.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+</section>
