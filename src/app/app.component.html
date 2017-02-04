@@ -1,7 +1,7 @@
 <section class="bluefalconapp">
   <header class="header">
     <h1>Reminders</h1>
-    <input class="new-remind" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newRemind.title" (keyup.enter)="addRemind()">
+    <input class="new-remind" placeholder="What do you want to be reminded about?" autofocus="" [(ngModel)]="newRemind.title" (keyup.enter)="addRemind()">
   </header>
   <section class="main" *ngIf="reminds.length > 0">
     <ul class="remind-list">
