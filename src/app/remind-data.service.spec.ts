@@ -46,7 +46,7 @@ describe('RemindDataService', () => {
 
   describe('#deleteRemindById(id)', () => {
 
-    it('should remove todo with the corresponding id', inject([RemindDataService], (service: RemindDataService) => {
+    it('should remove remind with the corresponding id', inject([RemindDataService], (service: RemindDataService) => {
       var date = new Date('December 25, 1987');
       let remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       let remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
