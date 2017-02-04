@@ -45,6 +45,6 @@
     "typescript": "~2.0.3"
   },
   "scripts": {
-     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+     "test": "./node_modules/.bin/karma start --single-run --browsers Chrome"
   }
 }
