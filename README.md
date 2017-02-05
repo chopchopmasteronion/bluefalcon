@@ -20,6 +20,10 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 - To manually run the linter:
   - 'node_modules/tslint/bin/tslint -c tslint.json src/app/**/*.ts'
 
+## Code coverage
+- To manually run the full code coverage and generate an html report in coverage/src/app/index.html
+  - ng test --watch false --code-coverage
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
