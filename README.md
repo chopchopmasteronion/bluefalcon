@@ -11,7 +11,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 1. Clone the repository
 2. Navigate to the project directory
-3. **If you do not have angular-cli installed**: sudo npm install -g angular-cli
+3. **If you do not have angular-cli installed**:
+  - sudo npm install -g angular-cli
 4. npm install
 5. ng serve
 
