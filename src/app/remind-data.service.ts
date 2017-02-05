@@ -16,9 +16,7 @@ export class RemindDataService {
 
   // Simulate POST /reminds
   addRemind(remind: Remind): RemindDataService {
-    if (!remind.id) {
-      remind.id = ++this.lastId;
-    }
+    remind.id = ++this.lastId;
     this.reminds.push(remind);
     return this;
   }
