@@ -5,6 +5,9 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 ## Build information
 [![Build Status](https://travis-ci.org/chopchopmasteronion/bluefalcon.svg?branch=master)](https://travis-ci.org/chopchopmasteronion/bluefalcon)
 
+[![Coverage Status](https://coveralls.io/repos/github/roamlrs/roamlrs/badge.svg?branch=master)]
+   (https://coveralls.io/github/roamlrs/roamlrs?branch=master)
+
 ## Getting Started
 
 1. Clone the repository
