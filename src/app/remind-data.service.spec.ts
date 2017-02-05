@@ -135,13 +135,13 @@ describe('RemindDataService', () => {
       expect(updatedRemind).toEqual(null);
     }));
 
-    // it('should return null if no values are specified', inject([RemindDataService], (service: RemindDataService) => {
-    //   const date = new Date('December 25, 1987');
-    //   const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
-    //   service.addRemind(remind);
-    //   const updatedRemind = service.updateRemindById(1);
-    //   expect(updatedRemind).toEqual(remind);
-    // }));
+    it('should return null if no values are specified', inject([RemindDataService], (service: RemindDataService) => {
+      const date = new Date('December 25, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      service.addRemind(remind);
+      const updatedRemind = service.updateRemindById(1);
+      expect(updatedRemind).toEqual(remind);
+    }));
 
   });
 

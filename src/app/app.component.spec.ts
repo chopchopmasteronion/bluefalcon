@@ -37,16 +37,16 @@ describe('AppComponent', () => {
     expect(app.remindDataService.lastId).toEqual(1);
   }));
 
-  it(`should create a new reminder and remove the reminder`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    app.addRemind();
-    expect(app.remindDataService.lastId).toEqual(1);
-    const  remind1 = app.remindDataService.getRemindById(1);
-    expect(app.remindDataService.getAllReminds()).toEqual([remind1]);
-    app.removeRemind(remind1);
-    expect(app.remindDataService.getAllReminds()).toEqual([]);
-  }));
+  // it(`should create a new reminder and remove the reminder`, async(() => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.debugElement.componentInstance;
+  //   app.addRemind();
+  //   expect(app.remindDataService.lastId).toEqual(1);
+  //   const  remind1 = app.remindDataService.getRemindById(1);
+  //   expect(app.remindDataService.getAllReminds()).toEqual([remind1]);
+  //   app.removeRemind(remind1);
+  //   expect(app.remindDataService.getAllReminds()).toEqual([]);
+  // }));
 
   it(`should toggle the complete status of a remind`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
