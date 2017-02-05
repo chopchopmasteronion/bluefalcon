@@ -6,7 +6,7 @@ export class Remind {
 
   complete: false;
 
-  constructor(values: Object = {}){
+  constructor(values: Object = {}) {
     Object.assign(this, values);
   }
 }
