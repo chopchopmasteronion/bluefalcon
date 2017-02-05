@@ -45,6 +45,6 @@
     "typescript": "~2.0.3"
   },
   "scripts": {
-     "test": "./node_modules/.bin/karma start --single-run --browsers Chrome"
+     "test": "node_modules/tslint/bin/tslint -c tslint.json src/app/**/*.ts;./node_modules/.bin/karma start --single-run --browsers Chrome"
   }
 }

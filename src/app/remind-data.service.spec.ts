@@ -20,9 +20,9 @@ describe('RemindDataService', () => {
     }));
 
     it('should return all reminds', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
-      let remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
+      const date = new Date('December 25, 1987');
+      const remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
       service.addRemind(remind1);
       service.addRemind(remind2);
       expect(service.getAllReminds()).toEqual([remind1, remind2]);
@@ -33,9 +33,9 @@ describe('RemindDataService', () => {
   describe('#save(remind)', () => {
 
     it('should automatically assign an incrementing id', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
-      let remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
+      const date = new Date('December 25, 1987');
+      const remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
       service.addRemind(remind1);
       service.addRemind(remind2);
       expect(service.getRemindById(1)).toEqual(remind1);
@@ -47,9 +47,9 @@ describe('RemindDataService', () => {
   describe('#deleteRemindById(id)', () => {
 
     it('should remove remind with the corresponding id', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
-      let remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
+      const date = new Date('December 25, 1987');
+      const remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
       service.addRemind(remind1);
       service.addRemind(remind2);
       expect(service.getAllReminds()).toEqual([remind1, remind2]);
@@ -59,10 +59,11 @@ describe('RemindDataService', () => {
       expect(service.getAllReminds()).toEqual([]);
     }));
 
-    it('should not remove anything if remind with corresponding id is not found', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
-      let remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
+    it('should not remove anything if remind with corresponding id is not found',
+          inject([RemindDataService], (service: RemindDataService) => {
+      const date = new Date('December 25, 1987');
+      const remind1 = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const remind2 = new Remind({title: 'Hello 2', complete: true, time: date, repeat: 30});
       service.addRemind(remind1);
       service.addRemind(remind2);
       expect(service.getAllReminds()).toEqual([remind1, remind2]);
@@ -75,42 +76,44 @@ describe('RemindDataService', () => {
   describe('#updateRemindById(id, values)', () => {
 
     it('should return remind with the corresponding id and updated title', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const date = new Date('December 25, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.updateRemindById(1, {
+      const updatedRemind = service.updateRemindById(1, {
         title: 'new title',
       });
       expect(updatedRemind.title).toEqual('new title');
     }));
 
     it('should return remind with the corresponding id and updated time', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      var date2 = new Date('December 26, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const date = new Date('December 25, 1987');
+      const date2 = new Date('December 26, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.updateRemindById(1, {
+      const updatedRemind = service.updateRemindById(1, {
         date: date2,
       });
       expect(updatedRemind.date).toEqual(date2);
     }));
 
-    it('should return remind with the corresponding id and updated repeat interval', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+    it('should return remind with the corresponding id and updated repeat interval',
+          inject([RemindDataService], (service: RemindDataService) => {
+      const date = new Date('December 25, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.updateRemindById(1, {
+      const updatedRemind = service.updateRemindById(1, {
         repeat: 20,
       });
       expect(updatedRemind.repeat).toEqual(20);
     }));
 
-    it('should return remind with updated title, comeplete status, date, and repeat interval', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      var date2 = new Date('December 26, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+    it('should return remind with updated title, comeplete status, date, and repeat interval',
+          inject([RemindDataService], (service: RemindDataService) => {
+      const date = new Date('December 25, 1987');
+      const date2 = new Date('December 26, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.updateRemindById(1, {
+      const updatedRemind = service.updateRemindById(1, {
         title: 'new title',
         complete: true,
         time: date2,
@@ -123,10 +126,10 @@ describe('RemindDataService', () => {
     }));
 
     it('should return null if remind is not found', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const date = new Date('December 25, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.updateRemindById(2, {
+      const updatedRemind = service.updateRemindById(2, {
         title: 'new title'
       });
       expect(updatedRemind).toEqual(null);
@@ -137,10 +140,10 @@ describe('RemindDataService', () => {
   describe('#toggleRemindComplete(remind)', () => {
 
     it('should return the updated remind with inverse complete status', inject([RemindDataService], (service: RemindDataService) => {
-      var date = new Date('December 25, 1987');
-      let remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
+      const date = new Date('December 25, 1987');
+      const remind = new Remind({title: 'Hello 1', complete: false, time: date, repeat: 15});
       service.addRemind(remind);
-      let updatedRemind = service.toggleRemindComplete(remind);
+      const updatedRemind = service.toggleRemindComplete(remind);
       expect(updatedRemind.complete).toEqual(true);
       service.toggleRemindComplete(remind);
       expect(updatedRemind.complete).toEqual(false);

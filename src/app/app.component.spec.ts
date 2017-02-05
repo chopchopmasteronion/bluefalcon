@@ -25,15 +25,15 @@ describe('AppComponent', () => {
   }));
 
   it(`should have a newRemind remind`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.newRemind instanceof Remind).toBeTruthy()
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.newRemind instanceof Remind).toBeTruthy();
   }));
 
   it('should display "Reminders" in h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
+    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Reminders');
   }));
 });

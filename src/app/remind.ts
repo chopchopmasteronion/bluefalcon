@@ -1,12 +1,12 @@
 export class Remind {
   id: number;
-  title: string = '';
+  title: '';
   time: Date;
   repeat: number;
 
-  complete: boolean = false;
+  complete: false;
 
-  constructor(values: Object = {}) {
+  constructor(values: Object = {}){
     Object.assign(this, values);
   }
 }

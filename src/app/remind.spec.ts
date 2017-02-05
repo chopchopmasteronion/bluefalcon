@@ -6,12 +6,12 @@ describe('Remind', () => {
   });
 
   it('should accept values in the constructor', () => {
-    var date = new Date('December 25, 1987');
-    let remind = new Remind({
+    const date = new Date('December 25, 1987');
+    const remind = new Remind({
       title: 'hello',
       complete: true,
       time: date,
-      repeat:15
+      repeat: 15
     });
     expect(remind.title).toEqual('hello');
     expect(remind.complete).toEqual(true);

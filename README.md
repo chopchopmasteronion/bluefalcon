@@ -10,6 +10,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 4. npm install
 5. ng serve
 
+## Linter
+
+- To manually run the linter:
+  - 'node_modules/tslint/bin/tslint -c tslint.json src/app/**/*.ts'
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

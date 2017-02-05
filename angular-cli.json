@@ -33,7 +33,7 @@
       "config": "./protractor.conf.js"
     }
   },
-  "test": {
+  "test": { 
     "karma": {
       "config": "./karma.conf.js"
     }

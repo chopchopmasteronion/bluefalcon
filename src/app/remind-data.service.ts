@@ -32,7 +32,7 @@ export class RemindDataService {
 
   // Simulate PUT /reminds/:id
   updateRemindById(id: number, values: Object = {}): Remind {
-    let remind = this.getRemindById(id);
+    const remind = this.getRemindById(id);
     if (!remind) {
       return null;
     }
@@ -53,8 +53,8 @@ export class RemindDataService {
   }
 
   // Toggle remind complete
-  toggleRemindComplete(remind: Remind){
-    let updatedRemind = this.updateRemindById(remind.id, {
+  toggleRemindComplete(remind: Remind) {
+    const updatedRemind = this.updateRemindById(remind.id, {
       complete: !remind.complete
     });
     return updatedRemind;
