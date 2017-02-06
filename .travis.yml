@@ -19,7 +19,8 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
 
 test:
+ - ng build
  - ng test --watch false --code-coverage
- 
+
 after_script:
   - cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
