@@ -18,6 +18,12 @@ before_install:
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
 
+before_script:
+- npm install -g angular-cli
+- npm install -g karma
+- npm install
+- ng build
+
 script:
 - karma start config/karma.conf.js --single-run
 
