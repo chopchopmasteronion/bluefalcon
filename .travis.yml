@@ -18,13 +18,7 @@ before_install:
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
 
-before_script:
-- npm install
-- ng build
-
 script:
-- node_modules/tslint/bin/tslint -c tslint.json src/app/**/*.ts
-- ng test --watch false --code-coverage
 - karma start config/karma.conf.js --single-run
 
 after_script:
