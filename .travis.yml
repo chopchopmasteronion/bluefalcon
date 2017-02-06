@@ -21,11 +21,10 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
-- npm install
 - ng build
 
 script:
-- karma start config/karma.conf.js --single-run
+- ng test --code-coverage
 
 after_script:
   - cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
