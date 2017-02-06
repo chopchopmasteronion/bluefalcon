@@ -9,22 +9,13 @@ branches:
   only:
   - master
 
-before_install:
- - export CHROME_BIN=/usr/bin/google-chrome
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - sudo apt-get update
- - sudo apt-get install -y libappindicator1 fonts-liberation
- - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
- - sudo dpkg -i google-chrome*.deb
-
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
 - ng build
 
 script:
-- ng test --code-coverage
+- ng test --single-run --code-coverage
 
 after_script:
   - cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
